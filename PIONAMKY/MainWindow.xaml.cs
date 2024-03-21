@@ -106,6 +106,23 @@ namespace WpfApp5
         {
             LiveTimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
         }
-       
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+              
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write("");
+                }
+                
+                TextVystup.Text = ""; 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"neni co mazat", "Chyba");
+            }
+        }
     }
 }
